@@ -16,11 +16,11 @@ class App extends Component {
     fetch("https://jsonplaceholder.typicode.com/users").then(res => res.json()).then(res => this.setState({ users: res }))
   }
   setUsersPosts = (id) => {
-    this.setState({ mode: 2 })
+    this.setState({ mode: 2,userPosts:[] })
     fetch("https://jsonplaceholder.typicode.com/posts?userId=" + id + "&skip=0&limit=10").then(res => res.json()).then(res => this.setState({ userPosts: res }))
   }
   setPostDetails = (id) => {
-    this.setState({ mode: 3 })
+    this.setState({ mode: 3,commentList:[] })
     fetch("https://jsonplaceholder.typicode.com/posts/" + id).then(res => res.json()).then(res => this.setState({ postDetails: res }))
   }
   setCommentList = (id) => {
